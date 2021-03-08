@@ -2,21 +2,25 @@ import java.util.Scanner;
 
 public class Calculadora {
 
+	public static double valor1 = 0;
+	public static double valor2 = 0;
+	//public static double soma;
+	//public static double subtracao;
+	//public static double divisao;
+	//public static double multiplicacao;
+		
+  	
+	
 	public static void main(String[] args) {
 		Scanner leitor = new Scanner(System.in);
-		double valor1 = 0, valor2=0;
-		double soma, subtracao, divisao, multiplicacao;
+		//double valor1 = 0, valor2=0;
+		double subtracao, divisao, multiplicacao;
 		int opcao = 0;
 		
 		while (opcao!=6) {
-			System.out.println("PROGRAMA CALCULADORA");
-			System.out.println("Escolha sua opção!");
-			System.out.println("1 - Digitar valores");
-			System.out.println("2 - Realizar soma");
-			System.out.println("3 - Realizar subtração");
-			System.out.println("4 - Realizar divisão");
-			System.out.println("5 - Realizar multiplicação");
-			System.out.println("6 - Sair");
+			
+			mostrarMenu();
+			
 			opcao = leitor.nextInt();
 			
 			switch(opcao) {
@@ -30,25 +34,17 @@ public class Calculadora {
 				
 				break;
 			case 2:
-				System.out.println("\n\nRealizando a soma entre " + valor1 + " e " + valor2);
-				soma = valor1 + valor2;
-				System.out.println("O resultado foi " + soma + "!\n\n");
+				Funcoes.somar(valor1, valor2);
 				
 				break;
 			case 3:
-				System.out.println("\n\nRealizando a subtração entre " + valor1 + " e " + valor2);
-				subtracao = valor1 - valor2;
-				System.out.println("O resultado foi " + subtracao + "!\n\n");
+				Funcoes.subtrair(valor1, valor2);
 				break;
 			case 4:
-				System.out.println("\n\nRealizando a divisão entre " + valor1 + " e " + valor2);
-				divisao = valor1 / valor2;
-				System.out.println("O resultado foi " + divisao + "!\n\n");
+				Funcoes.dividir(valor1, valor2);
 				break;
 			case 5:
-				System.out.println("\n\nRealizando a multiplicação entre " + valor1 + " e " + valor2);
-				multiplicacao = valor1 * valor2;
-				System.out.println("O resultado foi " + multiplicacao + "!\n\n");
+				Funcoes.multiplicar(valor1, valor2);
 				break;
 			case 6:
 				System.out.println("Saindo do sistema");
